@@ -75,10 +75,9 @@ class Resource_Monitor:
                     fehler = 0
                     while True:  # Anzahl der Versuche
                         try:
-                            messwert = self.instrument.read_float(functioncode=4,  # fix (!) for this model
+                            messwert = self.instrument.read_float(functioncode=4,
                                                                   registeraddress=self.input_register[key]["port"],
-                                                                  number_of_registers=self.input_register[key][
-                                                                      "digits"])
+                                                                  number_of_registers=self.input_register[key]["digits"])
                         except OSError:
                             fehler += 1
                             print("Kommunikationserror Nr. {}".format(fehler))
